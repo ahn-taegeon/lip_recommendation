@@ -8,10 +8,11 @@ import math
 # MySQL 데이터베이스 연결 설정
 def create_connection():
     return mysql.connector.connect(
-        host=st.secrets["mysql"]["host"],
-        user=st.secrets["mysql"]["user"],
-        password=st.secrets["mysql"]["password"],
-        database=st.secrets["mysql"]["database"]
+        host=st.secrets["mysql_host"],
+        user=st.secrets["mysql_user"],
+        password=st.secrets["mysql_password"],
+        database=st.secrets["mysql_database"],
+        charset="utf8mb4"
     )
 
 
