@@ -8,11 +8,12 @@ import math
 # MySQL 데이터베이스 연결 설정
 def create_connection():
     return mysql.connector.connect(
-        host="localhost",  # MySQL 서버 주소
-        user="root",  # MySQL 사용자 이름
-        password="dksxorjs5049",  # MySQL 비밀번호
-        database="csv_data"  # 사용할 데이터베이스 이름
+        host=st.secrets["mysql"]["host"],
+        user=st.secrets["mysql"]["user"],
+        password=st.secrets["mysql"]["password"],
+        database=st.secrets["mysql"]["database"]
     )
+
 
 # 페이지 설정
 st.set_page_config(page_title="Lip Recommendation System", page_icon="💄", layout="wide")
